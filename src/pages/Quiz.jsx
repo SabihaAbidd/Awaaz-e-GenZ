@@ -59,7 +59,6 @@ const QUESTIONS = [
 ]
 
 export default function Quiz() {
-  const [started, setStarted] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selected, setSelected] = useState(null)
   const [hasAnswered, setHasAnswered] = useState(false)
@@ -67,10 +66,9 @@ export default function Quiz() {
   const [finished, setFinished] = useState(false)
 
   const currentQuestion = QUESTIONS[currentIndex]
-  const progress = started ? ((finished ? QUESTIONS.length : currentIndex + 1) / QUESTIONS.length) * 100 : 0
+  const progress = ((finished ? QUESTIONS.length : currentIndex + 1) / QUESTIONS.length) * 100
 
-  function handleStart() {
-    setStarted(true)
+  function restartQuiz() {
     setCurrentIndex(0)
     setSelected(null)
     setHasAnswered(false)
@@ -79,7 +77,7 @@ export default function Quiz() {
   }
 
   function chooseOption(letter) {
-    if (!started || hasAnswered) return
+    if (hasAnswered) return
 
     setSelected(letter)
     setHasAnswered(true)
@@ -132,7 +130,7 @@ export default function Quiz() {
       <div className="quiz-progress-bar-wrap">
         <div className="quiz-progress-label">
           <span>Progress</span>
-          <span>{started ? `${finished ? QUESTIONS.length : currentIndex + 1} / ${QUESTIONS.length}` : `0 / ${QUESTIONS.length}`}</span>
+          <span>{`${finished ? QUESTIONS.length : currentIndex + 1} / ${QUESTIONS.length}`}</span>
         </div>
         <div className="quiz-progress-track" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}>
           <div className="quiz-progress-fill" style={{ width: `${progress}%` }} />
@@ -161,7 +159,7 @@ export default function Quiz() {
                   key={opt.letter}
                   id={`quiz-option-${opt.letter.toLowerCase()}`}
                   className="quiz-option"
-                  disabled={!started}
+                  disabled={hasAnswered}
                   aria-pressed={selected === opt.letter}
                   onClick={() => chooseOption(opt.letter)}
                   style={getOptionStyle(opt.letter)}
@@ -183,14 +181,14 @@ export default function Quiz() {
         )}
       </div>
 
-      {!started || finished ? (
+      {finished ? (
         <button
           id="quiz-start-btn"
           className="quiz-start-btn"
-          onClick={handleStart}
+          onClick={restartQuiz}
           type="button"
         >
-          {finished ? 'Restart Quiz' : 'Start Quiz'}
+          Restart Quiz
         </button>
       ) : (
         <button
@@ -203,12 +201,6 @@ export default function Quiz() {
         >
           {currentIndex === QUESTIONS.length - 1 ? 'See Score' : 'Next Question'}
         </button>
-      )}
-
-      {!started && (
-        <p className="quiz-helper-text">
-          Press Start to unlock questions and get instant feedback.
-        </p>
       )}
 
       <div style={{ paddingBottom: '24px' }} />
