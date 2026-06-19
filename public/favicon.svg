@@ -1,4 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#ff2d7a"/>
-  <text x="16" y="22" font-family="monospace" font-weight="700" font-size="16" fill="#f5f0e8" text-anchor="middle">آ</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Awaaz-e-GenZ favicon">
+  <path
+    d="M12 13h34c7 0 11 4 11 11v11c0 7-4 11-11 11H32L20 55l2-9H12C7 46 4 43 4 38V21c0-5 3-8 8-8Z"
+    fill="#ff2b7a"
+    stroke="#0d0d0d"
+    stroke-width="5"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M32 18 18 44h9l2.5-5h13L45 44h9L40 18h-8Z"
+    fill="#f5f0e8"
+    stroke="#0d0d0d"
+    stroke-width="3.5"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M33 32h6l-3-7-3 7Z"
+    fill="#f9a227"
+    stroke="#0d0d0d"
+    stroke-width="2.5"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M50 6v8M46 10h8"
+    fill="none"
+    stroke="#f9a227"
+    stroke-width="5"
+    stroke-linecap="round"
+  />
+  <path
+    d="M51 5v10M46 10h10"
+    fill="none"
+    stroke="#0d0d0d"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
 </svg>
