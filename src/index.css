@@ -3759,6 +3759,68 @@ pre {
     grid-template-columns: 1fr;
   }
 
+  .cards-section {
+    padding-bottom: 24px;
+  }
+
+  .cards-grid {
+    gap: 12px;
+  }
+
+  .feature-card {
+    min-height: 0;
+    padding: 15px 16px;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr) 28px;
+    grid-template-rows: auto auto;
+    column-gap: 12px;
+    row-gap: 4px;
+    align-items: center;
+    text-align: left;
+  }
+
+  .feature-card::before {
+    width: 5px;
+    height: 100%;
+    right: auto;
+    bottom: 0;
+  }
+
+  .card-icon-wrap {
+    grid-row: 1 / span 2;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+
+  .card-icon {
+    width: 23px;
+    height: 23px;
+  }
+
+  .card-title {
+    grid-column: 2;
+    font-size: 1.05rem;
+    line-height: 1.12;
+  }
+
+  .card-desc {
+    grid-column: 2;
+    font-size: 0.74rem;
+    line-height: 1.35;
+    margin-top: 0;
+  }
+
+  .card-arrow {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    align-self: center;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+
   .feature-card,
   .cta-inner,
   .sos-form,
@@ -3886,6 +3948,7 @@ pre {
 
   .collage-card {
     border-width: 2px;
+    border-radius: 10px;
     box-shadow: 4px 4px 0 var(--ink);
     transform: none;
   }
@@ -3897,8 +3960,9 @@ pre {
   }
 
   .collage-pink {
-    min-height: 126px;
+    min-height: 86px;
     margin-bottom: 10px;
+    padding: 12px 14px;
   }
 
   .collage-mid-row {
@@ -3914,11 +3978,61 @@ pre {
     flex-basis: auto;
     align-self: stretch;
     margin: 0;
-    min-height: 96px;
+    min-height: 92px;
+    padding: 13px 14px;
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr) 24px;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 12px;
+    row-gap: 2px;
   }
 
   .collage-lavender {
-    min-height: 108px;
+    min-height: 92px;
+    padding: 13px 14px;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .collage-orange > svg,
+  .collage-mint > svg {
+    grid-row: 1 / span 2;
+    width: 26px;
+    height: 26px;
+  }
+
+  .collage-small-title {
+    grid-column: 2;
+    font-size: 0.84rem;
+    line-height: 1.12;
+    margin: 0;
+    text-align: left;
+  }
+
+  .collage-support {
+    grid-column: 2;
+    max-width: none;
+    font-size: 0.72rem;
+    line-height: 1.28;
+    margin: 0;
+    text-align: left;
+  }
+
+  .collage-arrow {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    align-self: center;
+    justify-self: end;
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .collage-be-heard {
+    width: auto;
+    font-size: 1rem;
+    line-height: 1.05;
+    text-align: left;
   }
 
   .collage-megaphone {
