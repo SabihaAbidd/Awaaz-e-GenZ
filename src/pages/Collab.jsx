@@ -387,7 +387,7 @@ export default function Collab() {
           </div>
 
           {/* Events Grid */}
-          <div className="action-tool-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+          <div className="action-tool-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '16px' }}>
             {filteredEvents.length === 0 ? (
               <p style={{ gridColumn: '1/-1', textAlign: 'center', opacity: 0.6, padding: '40px 0' }}>
                 No active events listed for this region. Check back soon!
@@ -433,7 +433,7 @@ export default function Collab() {
       {activeTab === 'volunteer' && (
         <section aria-labelledby="volunteer-heading" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px', alignItems: 'start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '24px', alignItems: 'start' }}>
             
             {/* Left Column: Tasks List */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>

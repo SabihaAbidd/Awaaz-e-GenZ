@@ -96,16 +96,16 @@ function HandIllus() {
   // Open palm rising upward — halftone editorial sticker cutout.
   const knuckleY = [42, 38, 40, 46]
   const fingers = [
-    { x: 10, y: 14, w: 13, h: 46, rx: 6 }, // index
-    { x: 25, y:  9, w: 14, h: 52, rx: 6 }, // middle (tallest)
-    { x: 41, y: 13, w: 13, h: 48, rx: 6 }, // ring
-    { x: 56, y: 22, w: 12, h: 40, rx: 6 }, // pinky
+    { x: 28, y: 14, w: 13, h: 46, rx: 6 }, // index
+    { x: 43, y:  9, w: 14, h: 52, rx: 6 }, // middle (tallest)
+    { x: 59, y: 13, w: 13, h: 48, rx: 6 }, // ring
+    { x: 74, y: 22, w: 12, h: 40, rx: 6 }, // pinky
   ]
   return (
     <svg
       className="collage-illus collage-hand"
-      width="82" height="90"
-      viewBox="0 0 82 90"
+      width="96" height="90"
+      viewBox="0 0 96 90"
       fill="none"
       aria-hidden="true"
     >
@@ -119,16 +119,16 @@ function HandIllus() {
       {/* White sticker outline — drawn first so it sits behind */}
       <g fill="white" stroke="white" strokeWidth="12" strokeLinejoin="round" strokeLinecap="round">
         {fingers.map((f, i) => <rect key={i} x={f.x} y={f.y} width={f.w} height={f.h} rx={f.rx} />)}
-        <path d="M4 60 C4 50 5 39 11 33 C17 27 21 33 21 42 L21 62 Z" />
-        <rect x="6" y="57" width="66" height="22" rx="5" />
-        <rect x="2" y="73" width="74" height="17" rx="4" />
+        <path d="M24 61 C17 61 8 58 4 53 C1 49 3 44 8 43 C14 41 22 47 29 55 L29 64 Z" />
+        <rect x="24" y="57" width="66" height="22" rx="5" />
+        <rect x="20" y="73" width="74" height="17" rx="4" />
       </g>
 
       {/* Halftone fingers + palm */}
       <g fill="url(#handDots)" stroke="#0d0d0d" strokeWidth="2.5" strokeLinejoin="round">
         {fingers.map((f, i) => <rect key={i} x={f.x} y={f.y} width={f.w} height={f.h} rx={f.rx} />)}
-        <path d="M4 60 C4 50 5 39 11 33 C17 27 21 33 21 42 L21 62 Z" />
-        <rect x="6" y="57" width="66" height="22" rx="5" />
+        <path d="M24 61 C17 61 8 58 4 53 C1 49 3 44 8 43 C14 41 22 47 29 55 L29 64 Z" />
+        <rect x="24" y="57" width="66" height="22" rx="5" />
       </g>
 
       {/* Knuckle crease lines */}
@@ -140,8 +140,8 @@ function HandIllus() {
       ))}
 
       {/* Dark sleeve/cuff */}
-      <rect x="2" y="73" width="74" height="17" rx="4" fill="#0d0d0d" />
-      {[18, 33, 48, 62].map(x => (
+      <rect x="20" y="73" width="74" height="17" rx="4" fill="#0d0d0d" />
+      {[36, 51, 66, 80].map(x => (
         <line key={x} x1={x} y1={73} x2={x} y2={90}
           stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.35" />
       ))}
@@ -355,7 +355,6 @@ export default function Home() {
           <span className="collage-doodle collage-lines-top" />
           <span className="collage-doodle collage-lines-right" />
           <span className="collage-doodle collage-loop" />
-          <span className="collage-doodle collage-spark" />
 
           {/* Pink — آواز card */}
           <div className="collage-card collage-pink">
