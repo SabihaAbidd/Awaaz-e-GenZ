@@ -3851,7 +3851,7 @@ pre {
   }
 
   .hero-tagline-v2 br {
-    display: none;
+    display: block;
   }
 
   .hero-ctas {
