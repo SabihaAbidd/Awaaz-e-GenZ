@@ -114,15 +114,14 @@ export default function About() {
         <p style={{ fontSize: '1.1rem', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.3 }}>
           Want to contribute, partner, or just say salaam?
         </p>
-        <button
+        <a
           id="about-contact-btn"
           className="cta-btn"
           style={{ background: 'var(--ink)', border: '2px solid var(--ink)', boxShadow: '4px 4px 0 var(--lavender), 4px 4px 0 2px var(--ink)' }}
-          type="button"
-          onClick={() => window.location.href = 'mailto:hello@awaaz.local?subject=Awaaz-e-GenZ%20Collaboration'}
+          href="mailto:sabihaabid2021@gmail.com"
         >
           Get in Touch
-        </button>
+        </a>
       </div>
 
       <div style={{ paddingBottom: '16px' }} />
