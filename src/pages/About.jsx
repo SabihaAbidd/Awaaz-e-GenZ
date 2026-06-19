@@ -9,8 +9,8 @@ const STACK = [
 ]
 
 const TEAM = [
-  { emoji: '👩🏽‍💻', name: 'Rafia Ali',     role: ''  },
   { emoji: '👩🏽‍🎨', name: 'Sabiha Abid',    role: ''  },
+  { emoji: '👩🏽‍💻', name: 'Rafia Ali',     role: ''  },
 ]
 
 export default function About() {

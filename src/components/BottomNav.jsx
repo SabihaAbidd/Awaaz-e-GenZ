@@ -82,6 +82,16 @@ function CollabIcon({ active }) {
   )
 }
 
+function AboutIcon({ active }) {
+  return (
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <circle cx="11" cy="11" r="8" fill={active ? '#0d0d0d' : 'none'} stroke="#0d0d0d" strokeWidth="2"/>
+      <rect x="10" y="9" width="2" height="7" fill={active ? '#f5f0e8' : '#0d0d0d'}/>
+      <rect x="10" y="6" width="2" height="2" fill={active ? '#ff2d7a' : '#0d0d0d'}/>
+    </svg>
+  )
+}
+
 const NAV_ITEMS = [
   { to: '/',      label: 'Home',   Icon: HomeIcon  },
   { to: '/ask',   label: 'Ask',    Icon: AskIcon   },
@@ -90,6 +100,7 @@ const NAV_ITEMS = [
   { to: '/learn', label: 'Learn',  Icon: LearnIcon },
   { to: '/cards', label: 'Cards',  Icon: CardsIcon },
   { to: '/quiz',  label: 'Quiz',   Icon: QuizIcon  },
+  { to: '/about', label: 'About',  Icon: AboutIcon },
 ]
 
 const ACCENT_MAP = {
