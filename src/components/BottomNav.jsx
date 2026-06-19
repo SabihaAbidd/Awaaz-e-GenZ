@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 /* Pixel nav icons */
 function HomeIcon({ active }) {
@@ -92,15 +92,22 @@ function AboutIcon({ active }) {
   )
 }
 
+function MoreIcon({ active }) {
+  return (
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <rect x="3" y="4" width="16" height="14" rx="3" fill={active ? '#0d0d0d' : 'none'} stroke="#0d0d0d" strokeWidth="2"/>
+      <circle cx="7" cy="11" r="1.5" fill={active ? '#f5f0e8' : '#0d0d0d'}/>
+      <circle cx="11" cy="11" r="1.5" fill={active ? '#ff2d7a' : '#0d0d0d'}/>
+      <circle cx="15" cy="11" r="1.5" fill={active ? '#3df5b4' : '#0d0d0d'}/>
+    </svg>
+  )
+}
+
 const NAV_ITEMS = [
   { to: '/',      label: 'Home',   Icon: HomeIcon  },
   { to: '/ask',   label: 'Ask',    Icon: AskIcon   },
   { to: '/sos',   label: 'SOS',    Icon: SOSIcon   },
-  { to: '/collab', label: 'Collab', Icon: CollabIcon },
-  { to: '/learn', label: 'Learn',  Icon: LearnIcon },
-  { to: '/cards', label: 'Cards',  Icon: CardsIcon },
-  { to: '/quiz',  label: 'Quiz',   Icon: QuizIcon  },
-  { to: '/about', label: 'About',  Icon: AboutIcon },
+  { to: '/more',  label: 'More',   Icon: MoreIcon  },
 ]
 
 const ACCENT_MAP = {
@@ -112,9 +119,15 @@ const ACCENT_MAP = {
   '/cards': 'var(--orange)',
   '/quiz':  'var(--mint)',
   '/about': 'var(--lavender)',
+  '/more':  'var(--lavender)',
 }
 
+const MORE_ROUTES = ['/learn', '/cards', '/quiz', '/collab', '/about']
+
 export default function BottomNav() {
+  const { pathname } = useLocation()
+  const isMoreSection = MORE_ROUTES.includes(pathname)
+
   return (
     <nav className="bottom-nav" aria-label="Mobile navigation">
       {NAV_ITEMS.map(({ to, label, Icon }) => (
@@ -122,24 +135,29 @@ export default function BottomNav() {
           key={to}
           to={to}
           end={to === '/'}
-          className={({ isActive }) =>
-            `bottom-nav-item${isActive ? ' active' : ''}`
-          }
-          style={({ isActive }) =>
-            isActive ? { '--page-accent': ACCENT_MAP[to] } : {}
-          }
+          className={({ isActive }) => {
+            const active = isActive || (to === '/more' && isMoreSection)
+            return `bottom-nav-item${active ? ' active' : ''}`
+          }}
+          style={({ isActive }) => {
+            const active = isActive || (to === '/more' && isMoreSection)
+            return active ? { '--page-accent': ACCENT_MAP[to] } : {}
+          }}
           aria-label={label}
           id={`bottom-nav-${label.toLowerCase()}`}
         >
-          {({ isActive }) => (
-            <>
-              <span className="bottom-nav-icon">
-                <Icon active={isActive} />
-                {isActive && <span className="bottom-nav-dot" />}
-              </span>
-              <span className="bottom-nav-label">{label}</span>
-            </>
-          )}
+          {({ isActive }) => {
+            const active = isActive || (to === '/more' && isMoreSection)
+            return (
+              <>
+                <span className="bottom-nav-icon">
+                  <Icon active={active} />
+                  {active && <span className="bottom-nav-dot" />}
+                </span>
+                <span className="bottom-nav-label">{label}</span>
+              </>
+            )
+          }}
         </NavLink>
       ))}
     </nav>

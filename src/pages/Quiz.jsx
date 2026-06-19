@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import BackHeader from '../components/BackHeader.jsx'
 
 const QUESTIONS = [
   {
@@ -119,13 +120,12 @@ export default function Quiz() {
 
   return (
     <div className="quiz-page page-wrap">
-      <div className="page-header">
-        <p className="page-eyebrow">Test Yourself</p>
-        <h1 className="page-title">
-          Civic <span className="page-title-accent">Quiz</span>
-        </h1>
-        <p className="page-sub">5 questions. How well do you know your rights?</p>
-      </div>
+      <BackHeader
+        eyebrow="Test Yourself"
+        title="Civic"
+        accent="Quiz"
+        subtitle="5 questions. How well do you know your rights?"
+      />
 
       <div className="quiz-progress-bar-wrap">
         <div className="quiz-progress-label">

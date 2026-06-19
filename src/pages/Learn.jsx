@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import BackHeader from '../components/BackHeader.jsx'
 
 const FILTERS = ['All', 'Rights', 'Government', 'Elections', 'Law', 'Budget']
 
@@ -320,13 +321,12 @@ export default function Learn() {
 
   return (
     <div className="learn-page page-wrap">
-      <div className="page-header">
-        <p className="page-eyebrow">Explainers</p>
-        <h1 className="page-title">
-          Explain Like I'm <span className="page-title-accent">GenZ</span>
-        </h1>
-        <p className="page-sub">Heavy civic topics — made actually understandable.</p>
-      </div>
+      <BackHeader
+        eyebrow="Explainers"
+        title="Explain Like I'm"
+        accent="GenZ"
+        subtitle="Heavy civic topics — made actually understandable."
+      />
 
       {/* Filter chips */}
       <div className="filter-chips" role="group" aria-label="Filter articles">

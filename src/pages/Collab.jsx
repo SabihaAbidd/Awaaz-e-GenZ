@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import BackHeader from '../components/BackHeader.jsx'
 
 const TABS = [
   { id: 'events', label: 'Events & Networks', sub: 'Find local rallies, student forums, and coordinate on social issues by region.' },
@@ -338,13 +339,12 @@ export default function Collab() {
 
   return (
     <div className="collab-page page-wrap" style={{ '--page-accent': 'var(--lavender)' }}>
-      <header className="page-header">
-        <p className="page-eyebrow">Connect & Engage</p>
-        <h1 className="page-title">
-          Collab <span className="page-title-accent">Hub</span>
-        </h1>
-        <p className="page-sub">{currentTab.sub}</p>
-      </header>
+      <BackHeader
+        eyebrow="Connect & Engage"
+        title="Collab"
+        accent="Hub"
+        subtitle={currentTab.sub}
+      />
 
       {/* Tabs list */}
       <div className="filter-chips" style={{ marginBottom: '24px' }}>

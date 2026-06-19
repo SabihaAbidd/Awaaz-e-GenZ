@@ -1,3 +1,5 @@
+import BackHeader from '../components/BackHeader.jsx'
+
 const TODAY = new Date().toLocaleDateString('en-PK', {
   weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
 })
@@ -50,13 +52,12 @@ const PAST_CARDS = [
 export default function CivicCards() {
   return (
     <div className="cards-page page-wrap">
-      <div className="page-header">
-        <p className="page-eyebrow">Daily Drop</p>
-        <h1 className="page-title">
-          Civic <span className="page-title-accent">Cards</span>
-        </h1>
-        <p className="page-sub">One fact. One day. Every day.</p>
-      </div>
+      <BackHeader
+        eyebrow="Daily Drop"
+        title="Civic"
+        accent="Cards"
+        subtitle="One fact. One day. Every day."
+      />
 
       {/* Today's featured card */}
       <section aria-labelledby="todays-card">

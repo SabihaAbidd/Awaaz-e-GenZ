@@ -1,3 +1,5 @@
+import BackHeader from '../components/BackHeader.jsx'
+
 const STACK = [
   'AI-assisted',
   'Pakistan-focused',
@@ -16,15 +18,12 @@ const TEAM = [
 export default function About() {
   return (
     <div className="about-page page-wrap">
-      <div className="page-header">
-        <p className="page-eyebrow">Our Story</p>
-        <h1 className="page-title">
-          About <span className="page-title-accent">Awaaz</span>
-        </h1>
-        <p className="page-sub">
-          Built by young Pakistanis, for young Pakistanis.
-        </p>
-      </div>
+      <BackHeader
+        eyebrow="Our Story"
+        title="About"
+        accent="Awaaz"
+        subtitle="Built by young Pakistanis, for young Pakistanis."
+      />
 
       {/* Mission + Quote */}
       <div className="about-grid" style={{ marginBottom: '28px' }}>

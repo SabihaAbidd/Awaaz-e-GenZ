@@ -393,7 +393,7 @@ export default function Home() {
           {/* Lavender — Be Heard */}
           <div className="collage-card collage-lavender">
             <span className="card-halftone card-halftone-lavender" />
-            <div style={{ position: 'relative', zIndex: 1 }}>
+            <div className="collage-lavender-content">
               <p className="collage-be-heard">BE HEARD</p>
               <p className="collage-sub collage-sub-dark" style={{ marginTop: '6px', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
                 Share.&nbsp; Speak.&nbsp; Impact.

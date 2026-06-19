@@ -8,6 +8,7 @@ import Learn from './pages/Learn.jsx'
 import CivicCards from './pages/CivicCards.jsx'
 import Quiz from './pages/Quiz.jsx'
 import About from './pages/About.jsx'
+import More from './pages/More.jsx'
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/cards"  element={<CivicCards />} />
         <Route path="/quiz"   element={<Quiz />} />
         <Route path="/about"  element={<About />} />
+        <Route path="/more"   element={<More />} />
       </Route>
     </Routes>
   )
