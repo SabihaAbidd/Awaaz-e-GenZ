@@ -2,7 +2,7 @@
 
 Awaaz-e-GenZ is a React + Vite civic action prototype built for young Pakistanis. The product is designed around one practical idea: people do not want to read long civic guides when something goes wrong; they want to explain the problem and know what to do next.
 
-The app helps users move from confusion to action through bilingual civic guidance, short explainers, quiz practice, daily civic facts, and a Civic SOS flow that turns a real-life issue into a safe action plan
+The app helps users move from confusion to action through bilingual civic guidance, short explainers, quiz practice, daily civic facts, and a Civic SOS flow that turns a real-life issue into a safe action plan.
 
 ## Core Demo Flow
 
